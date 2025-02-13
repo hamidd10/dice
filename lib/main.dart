@@ -4,13 +4,14 @@ void main() {
   runApp(
     MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.teal.shade800,
+        backgroundColor: Colors.cyan.shade800,
         appBar: AppBar(
-          title: Text(
-            "Dice",
+          title: const Text(
+            "Dice Roll app",
             style: TextStyle(color: Colors.white),
           ),
-          backgroundColor: Colors.teal.shade900,
+          centerTitle: true,
+          backgroundColor: Colors.cyan.shade900,
         ),
         body: DicePage(),
       ),
@@ -27,9 +28,19 @@ class DicePage extends StatelessWidget {
       child: Row(
         children: [
           Expanded(
-              child: Image.asset('images/dice1.png')),
+              child: TextButton(
+            onPressed: () {
+              print('The left button got pressed ');
+            },
+            child: Image.asset('images/dice1.png'),
+          )),
           Expanded(
-              child: Image.asset('images/dice2.png')),
+              child: TextButton(
+            onPressed: () {
+              print('The right button got pressed');
+            },
+            child: Image.asset('images/dice2.png'),
+          )),
         ],
       ),
     );
